@@ -1,0 +1,134 @@
+<!-- !Date:03.07.2018 Copyright ©2018 HTML code by Cătălin Anghel-Ursu @Madness2aMaze (https://codepen.io/Madness2aMaze)
+- All Rights Reserved!
+
+MIT License
+Copyright (c) 2018 Cătălin Anghel-Ursu (https://github.com/Madness2aMaze/Survey-Form-Page)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Lobster|Merienda|Merienda+One|Orbitron|Quicksand|Raleway" rel="stylesheet">
+  <title>Build a Survey Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="content">
+      <h1 id="title" class="text-center">Survey Form</h1>
+      <p id="description" class="text-center">Be sure to let us know how can we improve our services</p>
+      <form id="survey-form">
+        <div class="row">
+          <div id="info" class="col">
+            <div class="form-group">
+              <label id="name-label" for="name">&#8727; Name</label>
+              <input type="text" id="name" class="form-control" placeholder="enter your name" autofocus required />
+            </div>
+            <div class="form-group">
+              <label id="email-label" for="mail">&#8727; E-mail</label>
+              <input type="email" id="email" class="form-control" placeholder="enter your email" required />
+            </div>
+            <div class="form-group">
+              <label id="number-label" for="number">&#8727; Age</label>
+              <input type="number" min="1" max="150" id="number" class="form-control" placeholder="enter your age" required />
+            </div>
+            <div class="form-group">
+              <label id="dropdown-label" for="dropdown">Current role</label>
+              <select id="dropdown" class="form-control form-control-sm">
+                <option value="" disabled selected>select an option...</option>
+                <option>Student</option>
+                <option>Part-time job</option>
+                <option>Full-time job</option>
+                <option>Prefer not to say</option>
+                <option>Other</option>
+              </select>
+            </div>            
+          </div>
+          <div id="questionnaire" class="col">
+            <label class="form-check-label" for="">&#8727; Would you consider recommending our services to a friend?</label>
+            <div class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="radios" id="radio1" value="option1" checked required />
+              <label class="custom-control-label" for="radio1">
+                Absolutely
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="radios" id="radio2" value="option2" required />
+              <label class="custom-control-label" for="radio2">
+                Possibly
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="radios" id="radio3" value="option3" required />
+              <label class="custom-control-label" for="radio3">
+                Not sure
+              </label>
+            </div>
+            <br>
+            <div class="form-select">
+              <label id="stars-label" for="stars">
+                &#8727; On a scale from 1 to 5, how many stars would you rate our services? 
+              </label>
+              <select id="stars" class="form-control form-control-sm" required>
+                <option value="" disabled selected>select an option...</option>
+                <option>5 &#9733; &#9733; &#9733; &#9733; &#9733; excellent</option>
+                <option>4 &#9733; &#9733; &#9733; &#9733;</option>
+                <option>3 &#9733; &#9733; &#9733; satisfactory</option>
+                <option>2 &#9733; &#9733;</option>
+                <option>1 &#9733; worst</option>
+              </select>
+            </div>
+            <br>
+            <div class="form-checks">
+              <label id="newsletter-label" for="stars">
+                Would you like to subscribe to our newsletter and promotional offers? 
+              </label>
+              <div id="newsletter">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" value="yes" name="check" id="check1" onclick="justOne(this)" checked />
+                  <label class="custom-control-label" for="check1" style="font-weight: bold;">
+                    Yes (recommended)
+                  </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" value="no" name="check" id="check2" onclick="justOne(this)" />
+                  <label class="custom-control-label" for="check2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="comments" class="col">
+            <div class="form-group">
+              <label for="textarea">Your feedback is appreciated, so don't forget to leave a message bellow:</label>
+              <textarea class="form-control" id="textarea" rows="11" placeholder="enter your message..."></textarea>
+              <small id="submitHelp" class="form-text">&#8727; We'll never share your data with anyone else.</small>
+            </div>            
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>            
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="footer" class="fixed-bottom text-center">
+    <h6>Designed and coded by <a href="https://github.com/Madness2aMaze" target="_blank" id="footbar" title="©2018 Cătălin Anghel-Ursu @Madness2aMaze - All Rights Reserved">@Madness2aMaze ©2018 - All Rights Reserved</a> | <a href="http://codepen.io/Madness2aMaze/" title="More of my works" target="_blank"><i class="fab fa-codepen"></i></a> | <a href="https://www.freecodecamp.com/" target="_blank" title="FreeCodeCamp" ><i class="fab fa-free-code-camp"></i></a>
+    </h6>
+  </div>
+</body>
