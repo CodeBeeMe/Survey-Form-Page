@@ -1,0 +1,147 @@
+/* !Date:03.07.2018 Copyright ©2018 SCSS code by Cătălin Anghel-Ursu @Madness2aMaze (https://codepen.io/Madness2aMaze)
+- All Rights Reserved!
+
+MIT License
+
+Copyright (c) 2018 Cătălin Anghel-Ursu (https://github.com/Madness2aMaze/Survey-Form-Page)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+@mixin radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($x, $y, $blur, $c) {
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  //background-color: #1d1e22;
+  background: #43c6ac; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(248, 255, 174, 1),
+    rgba(67, 198, 172, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(248, 255, 174, 1),
+    rgba(67, 198, 172, 1)
+  );
+}
+
+#content {
+  //background-color: #616574;
+  background: rgba(67, 198, 172, 0.1);
+  margin-top: 100px;
+  @include radius(10px);
+  padding: 20px;
+  border: 1px solid #fff;
+  @include box-shadow(2px, 2px, 5px, #638c6c);
+}
+
+#title {
+  font-size: 62px;
+  color: rgba(255, 255, 255, 0.5);
+  //text-shadow: 1px 1px 1px #333; //#ced4da;
+}
+
+#description {
+  @include radius(3px);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  //color: #999;
+}
+
+label {
+  font-size: 14px;
+}
+
+#info,
+#questionnaire {
+  border-right: 1px solid #fff;
+}
+
+#dropdown,
+#stars,
+#textarea {
+  font-size: 12px;
+}
+
+.custom-radio {
+  .custom-control-label::before {
+    border: 1px solid rgba(67, 198, 172, 1);
+    @include radius(10px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.custom-checkbox {
+  .custom-control-label::before {
+    border: 1px solid rgba(67, 198, 172, 1);
+    //@include radius(10px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+[type="text"],
+[type="email"],
+[type="number"] {
+  font-size: 12px;
+}
+
+input:hover, textarea:hover, select:hover {
+  border: 1px solid rgba(67, 198, 172, 1);
+}
+
+#submitHelp {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+}
+
+#submit {
+  margin-top: 5px;
+  font-size: 14px;
+  //float: right;
+}
+
+#footer {
+  background: rgba(0, 0, 0, 0.5);  
+  h6 {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #e0e0e0;
+    a {
+      color: rgba(67, 198, 172, 1);
+      transition: .2s;
+    }
+    a:hover {
+      color: rgba(248, 255, 174, 1);
+      transition: .2s;
+      text-decoration: none;
+    }
+  }
+}
